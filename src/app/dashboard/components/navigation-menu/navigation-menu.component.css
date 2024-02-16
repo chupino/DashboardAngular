@@ -1,0 +1,185 @@
+
+.container{
+    position: relative;
+    width: 100%;
+}
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: rgb(0, 4, 63);
+    border-left: 10px solid rgb(50, 0, 60);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active{
+    width: 80px;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-inline-start: 10px;
+    width: 100%;
+}
+.navigation ul li .navigation-header{
+    display: flex;
+    padding-inline-start: 10px;
+    justify-content: space-between;
+}
+.navigation ul li .navigation-header .icon-drawer{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-right: 25px;
+}
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    justify-content: center;
+}
+
+.navigation ul li:hover{
+    background-color: whitesmoke;
+}
+
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+.navigation ul li:not(:first-child):hover a,
+.navigation ul li .navigation-header a:hover,
+.navigation ul li .navigation-header span.icon-drawer i:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon i,
+.navigation ul li .navigation-header .icon-drawer i
+ {
+    font-size: 1.5rem;
+}
+.navigation ul li .navigation-header .icon-drawer i
+ {
+    color: whitesmoke;
+    
+}
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.navigation ul li:nth-child(1){
+    margin-bottom: 40px;
+    background-color: transparent;
+    display: inline-block;
+    width: auto;
+}
+.navigation ul li:nth-child(5){
+    margin-top: 270px;
+    background-color: transparent;
+}
+
+.navigation ul li .navigation-header .title{
+    font-size: 20px;
+    padding-right: 0;
+}
+.navigation ul li:nth-child(1) a .icon i{
+    font-size: 2rem;
+}
+.navigation ul li:not(:first-child):hover,
+.navigation ul li.active:not(:first-child){
+    background-color: whitesmoke;
+}
+
+.navigation ul li:not(:first-child) a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+.navigation ul li:not(:first-child):hover a,
+.navigation ul li.active:not(:first-child) a
+{
+    color: blue;
+}
+
+.navigation ul li:not(:first-child):not(:last-child):hover a::before,
+.navigation ul li.active:not(:first-child) a::before{
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 35px 35px 0px 10px whitesmoke;
+}
+.navigation ul li:not(:first-child):not(:last-child):hover a::after,
+.navigation ul li.active:not(:first-child) a::after{
+    content: '';
+    position: absolute;
+    right: 10px;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 35px -35px 0px 10px whitesmoke;
+}
+.navigation ul li:nth-child(5):hover{
+    background-color: red;
+}
+.navigation ul li:nth-child(5):hover a{
+    color: whitesmoke;
+}
+.navigation ul li:nth-child(5):hover a::before{
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 35px 35px 0px 10px red;
+}
+.navigation ul li:nth-child(5):hover a::after{
+    content: '';
+    position: absolute;
+    right: 10px;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 35px -35px 0px 10px rgb(255, 0, 0);
+}
+

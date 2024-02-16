@@ -1,0 +1,28 @@
+<div class="container">
+    <form class="box" [formGroup]="loginForm">
+        <h4>Admin <span>Dashboard</span></h4>
+        <h5>Entra a tu cuenta.</h5>
+        <div class="input-container" [class.error]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+            <input type="text" placeholder="Email" formControlName="email">
+            @if(loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched){
+                <small>Email no proporcionado</small>
+            }
+            @if(loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched){
+                <small>Email Incorrecto</small>
+            }
+        </div>
+        <div class="input-container" [class.error]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            <input type="password" placeholder="Passsword" autocomplete="off" formControlName="password">
+            @if (loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched) {
+                <small>Contraseña no proporcionada</small>
+            }
+            @if (loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched) {
+                <small>Contraseña no cumple con los caracteres mínimos</small>
+              }
+              
+        </div>
+    
+        <button type="submit" class="btn1" [routerLink]="['']" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+        
+    </form>
+</div>

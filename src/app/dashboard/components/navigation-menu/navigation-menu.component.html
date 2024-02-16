@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="navigation" #navigation>
+        <ul>
+            <li>
+                <div class="navigation-header">
+                    
+                        <span class="icon-drawer">
+                            <i class="uil uil-bars" (click)="toggleSidebar()"></i>
+                        </span>
+                    
+                    <a [routerLink]="['']">
+                        <span class="title">
+                            FoodApp
+                        </span>
+    
+                        <span class="icon">
+                            <i class="uil uil-crockery">
+    
+                            </i>
+                        </span>
+                    </a>
+                </div>
+            </li>
+            @for (item of items; track $index) {
+                <li [class.active] = "item.active && isActiveRoute(item.path)" (click)="setActiveClass(item)" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="item.path">
+                        <span class="icon"> <i class="{{item.icon}}"></i></span>
+                        <span class="title">{{ item.title }}</span>
+                    </a>
+                </li>
+            }
+            <li>
+                <a [routerLink]="['login']">
+                    <span class="icon"><i class="uil uil-signout"></i></span>
+                    <span class="title">Cerrar Sesión</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
